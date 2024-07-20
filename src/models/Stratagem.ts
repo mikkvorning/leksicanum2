@@ -1,7 +1,7 @@
-import { Phase } from "./Phase";
-import { Rule } from "./Rule";
-import { Tag } from "./Tag";
-import { Target } from "./Target";
+import { Phase } from './Phase';
+import { Rule } from './Rule';
+import { Tag } from './Tag';
+import { Target } from './Target';
 
 // An interface for a stratagem rule
 export interface StratagemRule extends Rule {
@@ -19,13 +19,13 @@ export interface Stratagem {
   quote?: string; // the quote for the stratagem
   description: string; // the description of the stratagem
   cost: number; // the command point cost of the stratagem
-  category: "Battle Tactic" | "Epic Deed" | "Strategic Ploy" | "Wargear"; // the category of the stratagem
-  when: "Either Player's Turn" | "Your Turn" | "Opponent's Turn"; // when the stratagem can be used
+  category: 'Battle Tactic' | 'Epic Deed' | 'Strategic Ploy' | 'Wargear'; // the category of the stratagem
+  when: "Either Player's Turn" | 'Your Turn' | "Opponent's Turn"; // when the stratagem can be used
   phase: Phase;
   condition: string; // the condition for using the stratagem
   target?: Target[];
   effect: string; // the effect of using the stratagem
-  tags: Tag[]; // the searchable tags for the stratagem
+  tags?: Tag[]; // the searchable tags for the stratagem
 }
 
 // An example of a stratagem object

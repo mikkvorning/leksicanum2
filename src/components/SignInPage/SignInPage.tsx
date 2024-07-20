@@ -1,14 +1,14 @@
-import { Box, Button, FormControl, TextField, Typography } from "@mui/material";
-import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
-import { useState } from "react";
-import { useNavigate } from "react-router";
-import { auth, provider } from "../../config/firebase";
+import { Box, Button, FormControl, TextField, Typography } from '@mui/material';
+import { createUserWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
+import { useState } from 'react';
+import { useNavigate } from 'react-router';
+import { auth, provider } from '../../config/firebase';
 
 const SignInPage = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [authing, setAuthing] = useState(false);
-  const [useGoogleSignin, setUseGoogleSignin] = useState(false);
+  const [, setUseGoogleSignin] = useState(false);
   const navigate = useNavigate();
 
   console.log(auth?.currentUser?.email);
@@ -26,7 +26,7 @@ const SignInPage = () => {
     signInWithPopup(auth, provider)
       .then((response) => {
         console.log(response);
-        navigate("/");
+        navigate('/');
       })
       .catch((error) => {
         console.log(error);
@@ -38,7 +38,7 @@ const SignInPage = () => {
     <Box
       sx={{
         flex: 1,
-        maxWidth: "320px",
+        maxWidth: '320px',
       }}
     >
       <FormControl>

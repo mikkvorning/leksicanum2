@@ -1,17 +1,18 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import SignInPage from "../SignInPage/SignInPage";
-import HomePage from "../HomePage/HomePage";
-import AuthRoute from "./AuthRoute";
-import { Box } from "@mui/material";
-import theme from "../../theme";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import SignInPage from '../SignInPage/SignInPage';
+import HomePage from '../HomePage/HomePage';
+import AuthRoute from './AuthRoute';
+import { Box } from '@mui/material';
+import theme from '../../theme';
+import { SearchResultsProvider } from '../Search/SearchResultsProvicer';
 
 const Routing = () => {
   return (
     <BrowserRouter>
       <Box
-        display={"flex"}
-        justifyContent={"center"}
-        marginX={"auto"}
+        display={'flex'}
+        justifyContent={'center'}
+        marginX={'auto'}
         p={4}
         maxWidth={theme.breakpoints.values.xl}
       >

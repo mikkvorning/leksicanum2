@@ -1,7 +1,7 @@
-import { Box } from "@mui/material";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { FunctionComponent, ReactNode, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Box } from '@mui/material';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { FunctionComponent, ReactNode, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface AuthRouteProps {
   children: ReactNode;
@@ -17,8 +17,9 @@ const AuthRoute: FunctionComponent<AuthRouteProps> = (
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-      user ? setLoading(false) : navigate("/signin");
+      user ? setLoading(false) : navigate('/signin');
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [auth]);
 
   if (loading) return <Box>Loading...</Box>;
